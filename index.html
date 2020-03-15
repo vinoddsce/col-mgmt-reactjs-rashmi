@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .first {
+            text-align: right;
+            background-color: white;
+            font-size: 30px;
+            color: blue;
+        }
+
+        .second {
+            text-align: right;
+            background-color: white;
+            font-size: 30px;
+            color: green;
+        }
+    </style>
+
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="babel.js"></script>
+</head>
+
+<body>
+    <!-- <marquee bgcolor="#000000" style="color: #ffffff;">Hi</marquee> -->
+    <div id="root">
+
+    </div>
+
+    <script type="text/babel">
+
+        var rootElement = document.getElementById('root');
+
+        // var props = { id: 'container', className: "second", children: "Hello World Children!!" }
+        // var children = "Hello World !!";
+        // var element = React.createElement('div', props);
+        // console.log(element);
+
+        const ui = (
+            <div>
+                <div className="first">
+                    <p>Hello World JSX !!!</p>
+                </div>
+                <div className="second">
+                    <p>Goodbye JSX !!!</p>
+                </div>
+            </div>
+        );
+
+        ReactDOM.render(ui, rootElement);
+
+        // var elementDiv = document.createElement('div');
+        // elementDiv.textContent = "Hello World !!!";
+        // elementDiv.className = "second";
+        // rootElement.appendChild(elementDiv);
+    </script>
+</body>
+
+</html>

@@ -6,14 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .first {
-            text-align: right;
-            background-color: white;
-            font-size: 30px;
-            color: blue;
-        }
-
-        .second {
+        .container {
             text-align: right;
             background-color: white;
             font-size: 30px;
@@ -36,28 +29,44 @@
 
         var rootElement = document.getElementById('root');
 
-        // var props = { id: 'container', className: "second", children: "Hello World Children!!" }
-        // var children = "Hello World !!";
-        // var element = React.createElement('div', props);
-        // console.log(element);
+        // const Message = (message) => {
+        //     return <div className="container">
+        //         <p>{message}</p>
+        //     </div>
+        // }
 
-        const ui = (
-            <div>
-                <div className="first">
-                    <p>Hello World JSX !!!</p>
-                </div>
-                <div className="second">
-                    <p>Goodbye JSX !!!</p>
-                </div>
+        const Message = (props) => {
+            console.log("props", props);
+            return <div className="container">
+                <p>{props.message}</p>
             </div>
+        }
+
+        // const el1 = <div className="container">Hi</div>;
+        // console.log(el1);
+        const ui = (
+            // <div>
+            //     {Message("Hello World")}
+            //     {Message("Goodbye JSX !!!")}
+            // </div>
+            <Message message="Welcome to ReactJS !!!" />
+
         );
 
         ReactDOM.render(ui, rootElement);
 
-        // var elementDiv = document.createElement('div');
-        // elementDiv.textContent = "Hello World !!!";
-        // elementDiv.className = "second";
-        // rootElement.appendChild(elementDiv);
+        // ReactDOM.render(
+        //     {
+        //         type: 'div',
+        //         props: {
+        //             className: 'container',
+        //             children: 'Hello World :) :) ',
+        //         },
+        //         key: null,
+        //         ref: null,
+        //         $$typeof: Symbol.for('react.element'),
+        //     }, rootElement);
+
     </script>
 </body>
 

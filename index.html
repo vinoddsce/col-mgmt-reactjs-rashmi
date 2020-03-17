@@ -6,14 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .container {
+        .hello {
             text-align: right;
             background-color: white;
             font-size: 30px;
             color: green;
         }
-    </style>
 
+        .bye {
+            text-align: right;
+            background-color: white;
+            font-size: 30px;
+            color: blue;
+        }
+    </style>
     <script src="react.development.js"></script>
     <script src="react-dom.development.js"></script>
     <script src="babel.js"></script>
@@ -22,36 +28,43 @@
 <body>
     <!-- <marquee bgcolor="#000000" style="color: #ffffff;">Hi</marquee> -->
     <div id="root">
-
     </div>
 
     <script type="text/babel">
-
         var rootElement = document.getElementById('root');
 
-        // const Message = (message) => {
-        //     return <div className="container">
-        //         <p>{message}</p>
+        // const Message = (props) => {
+        //     console.log("props", props);
+        //     return <div className={props.className}>
+        //         <p>{props.message}</p>
         //     </div>
         // }
+        // const el1 = <div className="container">Hi</div>;
+        // console.log(el1);
+        // const ui = (
+        //     <div>
+        //         <Message message="Welcome to ReactJS !!!" className="container" />
+        //         <Message message="Goodbye !!!" className="container" />
+        //     </div>
+        // );
 
-        const Message = (props) => {
-            console.log("props", props);
-            return <div className="container">
-                <p>{props.message}</p>
+        const Message = ({ children, className }) => {
+            // console.log("className", className);
+            // console.log("children", children);
+            return <div>
+                <p className={className}>{children}</p>
             </div>
         }
 
-        // const el1 = <div className="container">Hi</div>;
-        // console.log(el1);
         const ui = (
-            // <div>
-            //     {Message("Hello World")}
-            //     {Message("Goodbye JSX !!!")}
-            // </div>
-            <Message message="Welcome to ReactJS !!!" />
-
+            <div>
+                <Message className="hello">Hello World :)</Message>
+                <Message className="bye">Goodbye World !!!</Message>
+            </div>
         );
+
+        console.log("React", window.React);
+        console.log("ReactDOM", ReactDOM);
 
         ReactDOM.render(ui, rootElement);
 
